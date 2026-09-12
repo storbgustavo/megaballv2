@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #2a2f3a #0c0e13;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: #0c0e13;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: #2a2f3a;
+    border-radius: 4px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: #3a4050;
+  }
+  body {
+    background: #08090c;
+    color: #d4d8e0;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .card-surface {
+    @apply border border-ink-700/60 rounded-xl backdrop-blur-sm;
+    background-color: rgba(16, 18, 24, 0.8);
+  }
+  .card-surface-hover {
+    @apply hover:border-ink-600 transition-colors duration-200;
+  }
+  .input-dark {
+    @apply bg-ink-900 border border-ink-700 rounded-lg px-3 py-2 text-sm text-ink-100
+      placeholder:text-ink-400 focus:outline-none focus:border-brand-500/60
+      focus:ring-1 focus:ring-brand-500/30 transition-colors duration-150;
+  }
+  .btn-primary {
+    @apply bg-brand-500 hover:bg-brand-400 text-ink-950 font-semibold
+      px-5 py-2.5 rounded-lg transition-all duration-200 shadow-lg shadow-brand-500/20
+      hover:shadow-brand-500/40 active:scale-95 disabled:opacity-40
+      disabled:cursor-not-allowed disabled:shadow-none;
+  }
+  .btn-danger {
+    @apply bg-red-500 hover:bg-red-400 text-white font-semibold
+      px-5 py-2.5 rounded-lg transition-all duration-200 shadow-lg shadow-red-500/20
+      hover:shadow-red-400/40 active:scale-95 disabled:opacity-40
+      disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply bg-ink-800 hover:bg-ink-700 text-ink-200 font-medium
+      px-4 py-2.5 rounded-lg transition-colors duration-150 border border-ink-700
+      active:scale-95;
+  }
+  .log-line {
+    @apply font-mono text-xs leading-relaxed py-0.5 px-2 animate-slide-in;
+  }
+  .status-dot {
+    @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+}
+
+.shimmer-bg {
+  background: linear-gradient(90deg, #151821 25%, #21262f 50%, #151821 75%);
+  background-size: 200% 100%;
+}
